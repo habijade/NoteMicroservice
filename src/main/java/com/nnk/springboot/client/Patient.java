@@ -1,42 +1,28 @@
-package com.nnk.springboot.modeles;
+package com.nnk.springboot.client;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jdk.jfr.DataAmount;
-
-@Entity
-@Table(name = "Patients")
 public class Patient {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id", updatable = false)
     private Integer id;
 
-    @NotBlank(message="nom est obligatoire")
-    @Column(name = "nom", nullable = false)
     private String nom;
 
-    @NotBlank(message="le prenom est obligatoire")
-    @Column(name = "prenom", nullable = false)
     private String prenom;
 
-    @NotBlank(message = "la date de naissance est obligatoire")
-    @Column(name = "date_de_naissance", nullable = false)
     private String dateDeNaissance;
 
-    @NotBlank(message = "le genre est obligatoire")
-    @Column(name = "genre", nullable = false)
     private String genre;
 
-    @NotBlank(message = "adresse postale est obligatoire")
-    @Column(name = "addresse_postale", nullable = false)
     private String adressePostale;
 
-    @NotBlank(message = "numero de telephone est obligatoire")
-    @Column(name = "numero_de_telephone", nullable = false)
     private String numeroDeTelephone;
 
-    public Patient() {
+    public Patient(Integer id, String nom, String prenom, String dateDeNaissance, String genre, String adressePostale, String numeroDeTelephone) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateDeNaissance = dateDeNaissance;
+        this.genre = genre;
+        this.adressePostale = adressePostale;
+        this.numeroDeTelephone = numeroDeTelephone;
     }
 
     public Integer getId() {
